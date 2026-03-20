@@ -71,8 +71,32 @@ python3 benchmark_gemm.py 512 512 512
 
 这些概念不是空话，是真会影响结果。
 
+### 4. `gemm_openmp.cpp`
+一个 OpenMP 版本的 GEMM 示例，对比：
+- serial `ikj`
+- OpenMP 并行 `ikj`
+
+编译示例：
+
+```bash
+g++ -O3 -march=native -std=c++17 -fopenmp gemm_openmp.cpp -o gemm_openmp
+./gemm_openmp 512 512 512 3
+```
+
+你也可以通过环境变量控制线程数：
+
+```bash
+OMP_NUM_THREADS=1 ./gemm_openmp 512 512 512 3
+OMP_NUM_THREADS=4 ./gemm_openmp 512 512 512 3
+OMP_NUM_THREADS=8 ./gemm_openmp 512 512 512 3
+```
+
+这很适合观察：
+- 多线程是否真的带来加速
+- 线程数增加后收益是否线性
+- memory-bound 场景下线程增加为什么不一定一直赚
+
 ## 后续可继续加
-- OpenMP 并行版本
 - SIMD intrinsic 示例
 - naive vs packed GEMM
 - CPU vs GPU 对照实验

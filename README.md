@@ -64,7 +64,8 @@ hpc-optimization-notes/
 │  ├─ README.md
 │  ├─ benchmark_gemm.py
 │  ├─ gemm_baseline.cpp
-│  └─ gemm_blocked.cpp
+│  ├─ gemm_blocked.cpp
+│  └─ gemm_openmp.cpp
 └─ notes/
    └─ glossary.md
 ```
