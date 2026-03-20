@@ -68,7 +68,8 @@ hpc-optimization-notes/
 │  ├─ gemm_baseline.cpp
 │  ├─ gemm_blocked.cpp
 │  ├─ gemm_openmp.cpp
-│  └─ gemm_simd.cpp
+│  ├─ gemm_simd.cpp
+│  └─ gemm_packed.cpp
 └─ notes/
    └─ glossary.md
 ```
@@ -122,6 +123,7 @@ hpc-optimization-notes/
   - `examples/gemm_blocked.cpp`
   - `examples/gemm_openmp.cpp`
   - `examples/gemm_simd.cpp`
+  - `examples/gemm_packed.cpp`
 
 ## 下一步建议
 

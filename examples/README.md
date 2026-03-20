@@ -119,6 +119,27 @@ g++ -O3 -mavx -std=c++17 gemm_simd.cpp -o gemm_simd
 
 > 注意：这个例子需要 CPU 支持 **AVX**。如果机器或虚拟化环境不支持，对应二进制运行时会报 `Illegal instruction`。
 
+### 6. `gemm_packed.cpp`
+一个 packing 风格的 GEMM 小例子，对比：
+- baseline `ikj`
+- 先 pack B panel 再计算的版本
+
+编译示例：
+
+```bash
+g++ -O3 -march=native -std=c++17 gemm_packed.cpp -o gemm_packed
+./gemm_packed 512 512 512 3 64 64
+```
+
+参数依次是：
+- `M N K`
+- `repeat`
+- `BK BN`
+
+这个例子适合理解：
+- 什么是 packing
+- 为什么“先拷贝再算”有时反而更快
+- 高性能 GEMM 为什么经常要额外整理数据布局
+
 ## 后续可继续加
-- naive vs packed GEMM
 - CPU vs GPU 对照实验
