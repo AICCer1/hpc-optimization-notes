@@ -67,7 +67,8 @@ hpc-optimization-notes/
 │  ├─ benchmark_gemm.py
 │  ├─ gemm_baseline.cpp
 │  ├─ gemm_blocked.cpp
-│  └─ gemm_openmp.cpp
+│  ├─ gemm_openmp.cpp
+│  └─ gemm_simd.cpp
 └─ notes/
    └─ glossary.md
 ```
@@ -120,6 +121,7 @@ hpc-optimization-notes/
   - `examples/benchmark_gemm.py`
   - `examples/gemm_blocked.cpp`
   - `examples/gemm_openmp.cpp`
+  - `examples/gemm_simd.cpp`
 
 ## 下一步建议
 

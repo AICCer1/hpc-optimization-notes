@@ -96,7 +96,29 @@ OMP_NUM_THREADS=8 ./gemm_openmp 512 512 512 3
 - 线程数增加后收益是否线性
 - memory-bound 场景下线程增加为什么不一定一直赚
 
+### 5. `gemm_simd.cpp`
+一个 AVX intrinsic 风格的 GEMM 小例子，对比：
+- scalar `ikj`
+- AVX `ikj`
+
+编译示例：
+
+```bash
+g++ -O3 -mavx -std=c++17 gemm_simd.cpp -o gemm_simd
+./gemm_simd 512 512 512 3
+```
+
+这个例子适合用来理解：
+- `_mm256_set1_ps`
+- `_mm256_loadu_ps`
+- `_mm256_mul_ps`
+- `_mm256_add_ps`
+- `_mm256_storeu_ps`
+
+也就是“手写 SIMD”最基本的味道。
+
+> 注意：这个例子需要 CPU 支持 **AVX**。如果机器或虚拟化环境不支持，对应二进制运行时会报 `Illegal instruction`。
+
 ## 后续可继续加
-- SIMD intrinsic 示例
 - naive vs packed GEMM
 - CPU vs GPU 对照实验
