@@ -54,11 +54,15 @@ hpc-optimization-notes/
 │  ├─ roadmap.md
 │  ├─ hpc-basics.md
 │  ├─ chip-optimization.md
-│  └─ math-library-optimization.md
+│  ├─ gemm-optimization.md
+│  ├─ math-library-optimization.md
+│  └─ math-library-ecosystem.md
 ├─ benchmarks/
 │  └─ benchmark-template.md
 ├─ examples/
-│  └─ README.md
+│  ├─ README.md
+│  ├─ benchmark_gemm.py
+│  └─ gemm_baseline.cpp
 └─ notes/
    └─ glossary.md
 ```
@@ -99,11 +103,19 @@ hpc-optimization-notes/
 
 ---
 
+## 已补充的核心内容
+
+- **GEMM 优化专题**：`docs/gemm-optimization.md`
+- **数学库生态地图**：`docs/math-library-ecosystem.md`
+- **benchmark 示例代码**：
+  - `examples/gemm_baseline.cpp`
+  - `examples/benchmark_gemm.py`
+
 ## 下一步建议
 
 你可以继续让我补这些内容：
-- 一份 **系统学习路线图**
-- 一份 **GEMM 优化专题**
 - 一份 **CPU vs GPU 优化方法对比**
-- 一份 **数学库生态地图**
-- benchmark 示例代码（C++ / Python）
+- 一份 **Roofline Model 专题**
+- 一份 **profiling 工具实战**
+- 一份 **Sparse kernel 优化专题**
+- 一份 **OpenMP / CUDA / Triton 实战样例**
