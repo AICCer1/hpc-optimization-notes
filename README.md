@@ -10,6 +10,26 @@
 
 ---
 
+## 学习导航
+
+如果你第一次打开这个仓库，建议先看：
+
+- [`docs/learning-path.md`](./docs/learning-path.md)
+
+这里面按学习路线整理了：
+- 先看哪篇文档
+- 再跑哪个例子
+- 不同方向（新手 / 工程 / 数学库）分别怎么走
+
+如果你懒得选，最短路线是：
+1. `docs/gemm-optimization.md`
+2. `examples/gemm_baseline.cpp`
+3. `examples/gemm_blocked.cpp`
+4. `docs/roofline-model.md`
+5. `docs/profiling-practice.md`
+
+---
+
 ## 仓库方向
 
 ### 1. HPC 基础
@@ -51,6 +71,7 @@
 hpc-optimization-notes/
 ├─ README.md
 ├─ docs/
+│  ├─ learning-path.md
 │  ├─ roadmap.md
 │  ├─ hpc-basics.md
 │  ├─ chip-optimization.md
