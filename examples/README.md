@@ -18,7 +18,28 @@ g++ -O3 -march=native -std=c++17 gemm_baseline.cpp -o gemm_baseline
 ./gemm_baseline 512 512 512 3
 ```
 
-### 2. `benchmark_gemm.py`
+### 2. `gemm_blocked.cpp`
+一个更进一步的 GEMM 示例，对比：
+- `ikj` baseline
+- blocked / tiled 版本
+
+适合新手观察：
+- blocking 是怎么写出来的
+- tile size 改变可能如何影响性能
+
+编译示例：
+
+```bash
+g++ -O3 -march=native -std=c++17 gemm_blocked.cpp -o gemm_blocked
+./gemm_blocked 512 512 512 3 64 64 64
+```
+
+参数依次是：
+- `M N K`
+- `repeat`
+- `BM BN BK`
+
+### 3. `benchmark_gemm.py`
 一个简单的 Python 启动脚本，用来：
 - 编译 `gemm_baseline.cpp`
 - 跑几组默认尺寸
@@ -35,8 +56,22 @@ python3 benchmark_gemm.py
 python3 benchmark_gemm.py 512 512 512
 ```
 
+## 建议怎么用这些例子
+
+建议按这个顺序：
+1. 先跑 `gemm_baseline.cpp`
+2. 看 `ijk` 和 `ikj` 差异
+3. 再跑 `gemm_blocked.cpp`
+4. 改 `BM BN BK` 观察变化
+
+这样你能比较直观地体会：
+- 循环顺序
+- cache locality
+- blocking
+
+这些概念不是空话，是真会影响结果。
+
 ## 后续可继续加
-- blocked GEMM
 - OpenMP 并行版本
 - SIMD intrinsic 示例
 - naive vs packed GEMM

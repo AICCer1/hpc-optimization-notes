@@ -54,6 +54,7 @@ hpc-optimization-notes/
 │  ├─ roadmap.md
 │  ├─ hpc-basics.md
 │  ├─ chip-optimization.md
+│  ├─ cpu-vs-gpu-optimization.md
 │  ├─ gemm-optimization.md
 │  ├─ math-library-optimization.md
 │  └─ math-library-ecosystem.md
@@ -62,7 +63,8 @@ hpc-optimization-notes/
 ├─ examples/
 │  ├─ README.md
 │  ├─ benchmark_gemm.py
-│  └─ gemm_baseline.cpp
+│  ├─ gemm_baseline.cpp
+│  └─ gemm_blocked.cpp
 └─ notes/
    └─ glossary.md
 ```
