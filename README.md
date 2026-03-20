@@ -57,7 +57,8 @@ hpc-optimization-notes/
 │  ├─ cpu-vs-gpu-optimization.md
 │  ├─ gemm-optimization.md
 │  ├─ math-library-optimization.md
-│  └─ math-library-ecosystem.md
+│  ├─ math-library-ecosystem.md
+│  └─ roofline-model.md
 ├─ benchmarks/
 │  └─ benchmark-template.md
 ├─ examples/
@@ -109,10 +110,14 @@ hpc-optimization-notes/
 ## 已补充的核心内容
 
 - **GEMM 优化专题**：`docs/gemm-optimization.md`
+- **CPU vs GPU 优化方法对比**：`docs/cpu-vs-gpu-optimization.md`
+- **Roofline Model 专题**：`docs/roofline-model.md`
 - **数学库生态地图**：`docs/math-library-ecosystem.md`
 - **benchmark 示例代码**：
   - `examples/gemm_baseline.cpp`
   - `examples/benchmark_gemm.py`
+  - `examples/gemm_blocked.cpp`
+  - `examples/gemm_openmp.cpp`
 
 ## 下一步建议
 
